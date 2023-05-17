@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/quranContainerFragment"
+        android:name="com.example.myislamicapp.ui.fragments.quranContainer.QuranContainerFragment"
+        android:label="fragment_quran_container"
+        tools:layout="@layout/fragment_quran_container" >
+        <argument
+            android:name="startPage"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myislamicapp.ui.fragments.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_fehresFragment"
+            app:destination="@id/fehresFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_quranOnlineFragment"
+            app:destination="@id/quranOnlineFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_azkarFragment"
+            app:destination="@id/azkarFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_radioFragment"
+            app:destination="@id/radioFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_prayerTimesFragment"
+            app:destination="@id/prayerTimesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_fortyAhadeethFragment"
+            app:destination="@id/fortyAhadeethFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tafseerFragment"
+            app:destination="@id/tafseerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tasbeehFragment"
+            app:destination="@id/tasbeehFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.myislamicapp.ui.fragments.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/nav_graph"/>
+    </fragment>
+    <fragment
+        android:id="@+id/fehresFragment"
+        android:name="com.example.myislamicapp.ui.fragments.fehres.FehresFragment"
+        android:label="fragment_fehres"
+        tools:layout="@layout/fragment_fehres" >
+        <action
+            android:id="@+id/action_fehresFragment_to_quranContainerFragment"
+            app:destination="@id/quranContainerFragment" />
+        <action
+            android:id="@+id/action_fehresFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.myislamicapp.ui.fragments.quransearch.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_quranContainerFragment"
+            app:destination="@id/quranContainerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quranOnlineFragment"
+        android:name="com.example.myislamicapp.ui.fragments.quranOnline.QuranOnlineFragment"
+        android:label="fragment_quran_online"
+        tools:layout="@layout/fragment_quran_online" >
+        <action
+            android:id="@+id/action_quranOnlineFragment_to_surahDetailsFragment"
+            app:destination="@id/surahDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/surahDetailsFragment"
+        android:name="com.example.myislamicapp.ui.fragments.quranOnline.SurahDetailsFragment"
+        android:label="fragment_surah_details"
+        tools:layout="@layout/fragment_surah_details" >
+        <argument
+            android:name="surah"
+            app:argType="com.example.myislamicapp.data.pojo.quranResponse.Surah" />
+    </fragment>
+    <fragment
+        android:id="@+id/azkarFragment"
+        android:name="com.example.myislamicapp.ui.fragments.azkar.azkarHome.AzkarHomeFragment"
+        android:label="fragment_azkar"
+        tools:layout="@layout/fragment_azkar" >
+
+        <action
+            android:id="@+id/action_azkarFragment_to_azkarDetailFragment"
+            app:destination="@id/azkarDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/azkarDetailFragment"
+        android:name="com.example.myislamicapp.ui.fragments.azkar.azkarDetails.AzkarDetailFragment"
+        android:label="fragment_azkar_detail"
+        tools:layout="@layout/fragment_azkar_detail" >
+        <argument
+            android:name="zekrType"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/radioFragment"
+        android:name="com.example.myislamicapp.ui.fragments.radio.RadioFragment"
+        android:label="fragment_radio"
+        tools:layout="@layout/fragment_radio" />
+    <fragment
+        android:id="@+id/prayerTimesFragment"
+        android:name="com.example.myislamicapp.ui.fragments.prayertimes.PrayerTimesFragment"
+        android:label="fragment_prayer_times"
+        tools:layout="@layout/fragment_prayer_times" />
+    <fragment
+        android:id="@+id/fortyAhadeethFragment"
+        android:name="com.example.myislamicapp.ui.fragments.ahadeeth.FortyAhadeethFragment"
+        android:label="fragment_forty_ahadeeth"
+        tools:layout="@layout/fragment_forty_ahadeeth" >
+        <action
+            android:id="@+id/action_fortyAhadeethFragment_to_fortyAhadeethDetailsFragment"
+            app:destination="@id/fortyAhadeethDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fortyAhadeethDetailsFragment"
+        android:name="com.example.myislamicapp.ui.fragments.ahadeeth.FortyAhadeethDetailsFragment"
+        android:label="fragment_forty_ahadeeth_details"
+        tools:layout="@layout/fragment_forty_ahadeeth_details" >
+        <argument
+            android:name="index"
+            app:argType="integer" />
+        <argument
+            android:name="hadeethName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/tafseerFragment"
+        android:name="com.example.myislamicapp.ui.fragments.tafseer.TafseerFragment"
+        android:label="fragment_tafseer"
+        tools:layout="@layout/fragment_tafseer" >
+        <action
+            android:id="@+id/action_tafseerFragment_to_tafseerAyahFragment"
+            app:destination="@id/tafseerAyahFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tafseerAyahFragment"
+        android:name="com.example.myislamicapp.ui.fragments.tafseer.TafseerAyahFragment"
+        android:label="fragment_tafseer_ayah"
+        tools:layout="@layout/fragment_tafseer_ayah" >
+        <argument
+            android:name="tafseerResponse"
+            app:argType="com.example.myislamicapp.data.pojo.tafseer.TafseerResponseItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/tasbeehFragment"
+        android:name="com.example.myislamicapp.ui.fragments.tasbeeh.TasbeehFragment"
+        android:label="fragment_tasbeeh"
+        tools:layout="@layout/fragment_tasbeeh" >
+        <action
+            android:id="@+id/action_tasbeehFragment_to_tasbeehDetailFragment"
+            app:destination="@id/tasbeehDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tasbeehDetailFragment"
+        android:name="com.example.myislamicapp.ui.fragments.tasbeeh.TasbeehDetailFragment"
+        android:label="fragment_tasbeeh_detail"
+        tools:layout="@layout/fragment_tasbeeh_detail" >
+        <argument
+            android:name="tasbeehName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_tasbeehDetailFragment_to_allTasabeehFragment"
+            app:destination="@id/allTasabeehFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allTasabeehFragment"
+        android:name="com.example.myislamicapp.ui.fragments.tasbeeh.AllTasabeehFragment"
+        android:label="fragment_all_tasabeeh"
+        tools:layout="@layout/fragment_all_tasabeeh" />
+</navigation>

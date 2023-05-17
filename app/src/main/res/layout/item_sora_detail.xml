@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="0dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#74B3D5DD">
+
+        <TextView
+            android:id="@+id/itemAyaNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/cairo_bold"
+            android:padding="4dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/itemAyaTxtTranslate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="12" />
+
+        <TextView
+            android:id="@+id/itemAyaTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:fontFamily="@font/cairo_regular"
+            android:padding="8dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/itemAyaNo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="قالو الحمد لله الذي اذهب عنا الحزن  ان ربنا لغفور شكور ادع الي شبيل " />
+
+        <TextView
+            android:id="@+id/itemAyaTxtTranslate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:fontFamily="@font/cairo_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/itemAyaTxt"
+            tools:text="قالو الحمد لله الذي اذهب عنا الحزن  ان ربنا لغفور شكور ادع الي شبيل " />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

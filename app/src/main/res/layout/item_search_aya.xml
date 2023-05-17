@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#43B3D5DD"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/soraname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/cairo_bold"
+            android:padding="6dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="سورة الاحزاب" />
+
+        <TextView
+            android:id="@+id/jozzNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/cairo_bold"
+            android:padding="6dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="جزء 2" />
+
+        <TextView
+            android:id="@+id/ayaNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/cairo_bold"
+            android:padding="6dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/soraname"
+            app:layout_constraintEnd_toStartOf="@id/jozzNum"
+            app:layout_constraintTop_toTopOf="@id/soraname"
+            app:layout_constraintBottom_toBottomOf="@id/soraname"
+            tools:text="رقم الاية : 6" />
+        <TextView
+            android:id="@+id/ayaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo_medium"
+            android:gravity="center"
+            android:maxLines="2"
+            android:layout_marginBottom="12dp"
+            android:paddingBottom="12dp"
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="4dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/soraname" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

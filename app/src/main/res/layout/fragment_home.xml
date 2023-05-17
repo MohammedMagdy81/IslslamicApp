@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ui.fragments.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerHome"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#88009688"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageMosque"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/mosque"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".5" />
+
+        <TextView
+            android:id="@+id/textDateHijri"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent=".4"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/cairo_bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageMosque"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textCurrentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/textDateHijri"
+            app:layout_constraintTop_toBottomOf="@id/textDateHijri"
+            app:layout_constraintEnd_toEndOf="@id/textDateHijri"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            tools:text="12:34:12"
+            />
+
+        <TextView
+            android:id="@+id/textCurrentDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="@font/cairo_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/textDateHijri"
+            app:layout_constraintStart_toStartOf="@id/textDateHijri"
+            app:layout_constraintTop_toBottomOf="@id/textCurrentTime"
+            tools:text="السبت" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerHome">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#08009688"
+            android:paddingBottom="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerHome">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/homeCardQuranOffline"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/splash_color"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toStartOf="@id/homeCardAhadeeth"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".4">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/quran_offline_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:fontFamily="@font/cairo_bold"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/quran_offline_text"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/quran"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/quran_offline_text"
+                        app:layout_constraintStart_toStartOf="@id/quran_offline_text"
+                        app:layout_constraintTop_toBottomOf="@id/quran_offline_text" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/homeCardAhadeeth"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/splash_color"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/homeCardQuranOffline"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".4">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/forty_ahadeth_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:fontFamily="@font/cairo_bold"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/ahadeeth_text"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/ahadeth"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/forty_ahadeth_text"
+                        app:layout_constraintStart_toStartOf="@id/forty_ahadeth_text"
+                        app:layout_constraintTop_toBottomOf="@id/forty_ahadeth_text" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/homeCardQuranOnline"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/splash_color"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="@id/homeCardQuranOffline"
+                app:layout_constraintStart_toStartOf="@id/homeCardQuranOffline"
+                app:layout_constraintTop_toBottomOf="@id/homeCardQuranOffline"
+                app:layout_constraintWidth_percent=".4"
+
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/quranOnline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:fontFamily="@font/cairo_bold"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/quran_online_text"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/quran_online"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/quranOnline"
+                        app:layout_constraintStart_toStartOf="@id/quranOnline"
+                        app:layout_constraintTop_toBottomOf="@id/quranOnline" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/homeCardAzkar"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/splash_color"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="@id/homeCardAhadeeth"
+                app:layout_constraintStart_toStartOf="@id/homeCardAhadeeth"
+                app:layout_constraintTop_toBottomOf="@id/homeCardAhadeeth"
+                app:layout_constraintWidth_percent=".4"
+
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/azkarText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:fontFamily="@font/cairo_bold"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="الأذكار النبوية الشريفة"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/azkar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/azkarText"
+                        app:layout_constraintStart_toStartOf="@id/azkarText"
+                        app:layout_constraintTop_toBottomOf="@id/azkarText" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/homeCardPrayerTimes"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                app:cardBackgroundColor="@color/splash_color"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="@id/homeCardQuranOnline"
+                app:layout_constraintStart_toStartOf="@id/homeCardQuranOnline"
+                app:layout_constraintTop_toBottomOf="@id/homeCardQuranOnline"
+                app:layout_constraintWidth_percent=".4"
+
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/prayersTimeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:fontFamily="@font/cairo_bold"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="مواقيت الصلاة"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/time"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/prayersTimeText"
+                        app:layout_constraintStart_toStartOf="@id/prayersTimeText"
+                        app:layout_constraintTop_toBottomOf="@id/prayersTimeText" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/homeCardRadio"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                app:cardBackgroundColor="@color/splash_color"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="@id/homeCardAzkar"
+                app:layout_constraintStart_toStartOf="@id/homeCardAzkar"
+                app:layout_constraintTop_toBottomOf="@id/homeCardAzkar"
+                app:layout_constraintWidth_percent=".4"
+
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/radioTimeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:fontFamily="@font/cairo_bold"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/radio_text"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/radio"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/radioTimeText"
+                        app:layout_constraintStart_toStartOf="@id/radioTimeText"
+                        app:layout_constraintTop_toBottomOf="@id/radioTimeText" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/homeCardTasbeeh"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/splash_color"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toStartOf="@id/homeCardAhadeeth"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/homeCardPrayerTimes"
+                app:layout_constraintWidth_percent=".4">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tasbeeh_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:fontFamily="@font/cairo_bold"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/tasbeeh"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/tasbih"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/tasbeeh_text"
+                        app:layout_constraintStart_toStartOf="@id/tasbeeh_text"
+                        app:layout_constraintTop_toBottomOf="@id/tasbeeh_text" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/homeCardTafseer"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/splash_color"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+               app:layout_constraintStart_toStartOf="@id/homeCardRadio"
+                app:layout_constraintTop_toBottomOf="@id/homeCardRadio"
+                app:layout_constraintWidth_percent=".4">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tafseer_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:fontFamily="@font/cairo_bold"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/tafseer_text"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/tafsser_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/tafseer_text"
+                        app:layout_constraintStart_toStartOf="@id/tafseer_text"
+                        app:layout_constraintTop_toBottomOf="@id/tafseer_text" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

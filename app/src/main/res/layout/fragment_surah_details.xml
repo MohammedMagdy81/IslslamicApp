@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context=".ui.fragments.quranOnline.SurahDetailsFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/detailCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#4AB3D5DD"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+
+            <TextView
+                android:id="@+id/detailsSoraEnName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/cairo_bold"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Al-fateha" />
+
+            <TextView
+                android:id="@+id/detailSoraArName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/cairo_bold"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detailsSoraEnName"
+                tools:text="سورة الفاتحة" />
+
+            <TextView
+                android:id="@+id/detailSoraType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="22dp"
+                android:fontFamily="@font/cairo_bold"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detailsSoraEnName"
+                tools:text="مكية" />
+
+            <TextView
+                android:id="@+id/detailSoraAyatNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="22dp"
+                android:fontFamily="@font/cairo_bold"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detailSoraArName"
+
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="555" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <EditText
+        android:id="@+id/detailEtSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_search_bg"
+        android:drawableStart="@drawable/ic_search"
+        android:gravity="center"
+        android:hint="@string/search_text"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailCard"
+        app:layout_constraintWidth_percent=".78" />
+
+    <ImageView
+        android:id="@+id/icSelectQari"
+        android:layout_width="44dp"
+        android:layout_height="40dp"
+        android:src="@drawable/mic"
+        app:layout_constraintBottom_toBottomOf="@id/detailEtSearch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/detailEtSearch"
+        app:layout_constraintTop_toTopOf="@id/detailEtSearch" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/soraDetailsRv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:padding="10dp"
+        android:layout_marginBottom="6dp"
+       app:layout_constraintBottom_toTopOf="@id/linearAudio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/icSelectQari" />
+
+    <LinearLayout
+        android:id="@+id/linearAudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="#F0DAEDF1"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:weightSum="4"
+        >
+
+        <ImageView
+            android:id="@+id/imagePlay"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/play"
+
+            />
+        <TextView
+            android:id="@+id/textStartTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:textSize="18sp"
+            android:text="0:00"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+
+            />
+
+        <SeekBar
+            android:id="@+id/qariSeekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:indeterminateTint="@color/black"
+            android:progressTint="@color/black"
+            android:layout_weight="3.9"
+            android:thumbTint="@color/black"
+            android:layout_marginStart="12dp"
+            />
+        <TextView
+            android:id="@+id/textTotalTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:textSize="18sp"
+            android:text="46:00"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+
+            />
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

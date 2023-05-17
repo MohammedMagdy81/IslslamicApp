@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/sheetContainer"
+    android:background="@drawable/bottom_sheet_bg">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="6dp"
+        android:layout_margin="8dp"
+        android:textSize="20sp"
+        android:textColor="#168BA6"
+        android:text="اختر قارئا"
+        android:fontFamily="@font/cairo_bold"
+        android:id="@+id/textSelectQaree"
+        />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textSelectQaree">
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/radioBtn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" عبد الباسط عبد الصمد"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:paddingStart="32dp"
+            android:buttonTint="#168BA6"
+            />
+
+        <RadioButton
+            android:id="@+id/radioBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="عبدالودود حنيف"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:paddingStart="32dp"
+            android:buttonTint="#168BA6"/>
+
+        <RadioButton
+            android:id="@+id/radioBtn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="عبد الرشيد صوفي- رواية شعبة"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:paddingStart="32dp"
+            android:buttonTint="#168BA6"/>
+
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSaveQaree"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent=".7"
+        android:layout_margin="16dp"
+        android:text="حفظ"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_bg"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

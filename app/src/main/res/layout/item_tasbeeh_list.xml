@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:layout_marginHorizontal="5dp"
+    app:cardCornerRadius="10dp"
+    android:layout_marginVertical="10dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp">
+
+        <ImageView
+            android:id="@+id/iconTasbeeh"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_margin="4dp"
+            android:src="@drawable/tasbih"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".22" />
+
+        <ImageView
+            android:id="@+id/iconTasbeeh2"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_margin="4dp"
+            android:src="@drawable/tasbih"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".22" />
+
+        <ImageView
+            android:id="@+id/iconTasbeeh3"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_margin="4dp"
+            android:src="@drawable/tasbih"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_percent=".22" />
+        <ImageView
+            android:id="@+id/iconTasbeeh4"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_margin="4dp"
+            android:src="@drawable/tasbih"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_percent=".22" />
+
+        <TextView
+            android:id="@+id/tasbeehName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/iconTasbeeh4"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="سبحان الله"
+            android:textSize="26sp"
+            android:fontFamily="@font/cairo_bold"
+            android:textColor="#2DB1A5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iconTasbeeh2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
