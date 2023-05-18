@@ -11,6 +11,9 @@ import androidx.work.WorkManager;
 import java.util.concurrent.TimeUnit;
 
 public class AzanUtils {
+
+    public static final String AZAN_CHANNEL_ID = "AzanChannel";
+    public static final String AZAN_CHANNEL_NAME = "AzanChannelName";
     public static void registerPrayerTimes(Context context) {
         WorkManager.getInstance(context.getApplicationContext()).cancelAllWork();
 

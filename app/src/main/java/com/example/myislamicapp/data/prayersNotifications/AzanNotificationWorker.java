@@ -2,6 +2,8 @@ package com.example.myislamicapp.data.prayersNotifications;
 
 import static android.media.AudioAttributes.CONTENT_TYPE_SONIFICATION;
 
+import static com.example.myislamicapp.data.prayersNotifications.AzanUtils.AZAN_CHANNEL_ID;
+import static com.example.myislamicapp.data.prayersNotifications.AzanUtils.AZAN_CHANNEL_NAME;
 import static com.example.myislamicapp.data.utils.Constant.AZAN_CONTENT_KEY;
 import static com.example.myislamicapp.data.utils.Constant.AZAN_TITLE_KEY;
 
@@ -21,8 +23,6 @@ import com.example.myislamicapp.R;
 
 public class AzanNotificationWorker extends Worker {
 
-    private static final String AZAN_CHANNEL_ID = "AzanChannel";
-    private static final String AZAN_CHANNEL_NAME = "AzanChannelName";
 
     public AzanNotificationWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);

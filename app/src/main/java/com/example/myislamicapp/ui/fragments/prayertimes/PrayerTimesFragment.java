@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.DatePicker;
 
+import com.example.myislamicapp.data.prayersNotifications.AzanUtils;
 import com.example.myislamicapp.databinding.FragmentPrayerTimesBinding;
 import com.example.myislamicapp.ui.adapters.PrayerTimeListAdapter;
 
@@ -48,6 +49,7 @@ public class PrayerTimesFragment extends Fragment {
         viewModel.setPrayerTimings(calendar.get(Calendar.DAY_OF_MONTH),calendar.get(Calendar.MONTH),calendar.get(Calendar.YEAR));
         setupAdapter();
         initDatePicker();
+        AzanUtils.registerPrayerTimes(requireContext());
 
 
     }
