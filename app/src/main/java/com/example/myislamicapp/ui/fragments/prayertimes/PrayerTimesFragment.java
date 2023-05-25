@@ -49,7 +49,7 @@ public class PrayerTimesFragment extends Fragment {
         viewModel.setPrayerTimings(calendar.get(Calendar.DAY_OF_MONTH),calendar.get(Calendar.MONTH),calendar.get(Calendar.YEAR));
         setupAdapter();
         initDatePicker();
-        AzanUtils.registerPrayerTimes(requireContext());
+        AzanUtils.registerPrayerTimes(getActivity().getApplicationContext());
 
 
     }

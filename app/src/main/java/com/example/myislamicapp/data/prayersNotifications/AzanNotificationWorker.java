@@ -42,6 +42,7 @@ public class AzanNotificationWorker extends Worker {
         builder
                 .setContentTitle(title)
                 .setContentText(body)
+                .setDefaults(NotificationCompat.DEFAULT_SOUND)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setSmallIcon(R.drawable.azan)
                 .setSound(sound);
@@ -67,8 +68,7 @@ public class AzanNotificationWorker extends Worker {
         Data data = getInputData();
         String title = data.getString(AZAN_TITLE_KEY);
         String content = data.getString(AZAN_CONTENT_KEY);
-        Uri azanSound = Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" +
-                R.raw.azan);
+        Uri azanSound = Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.raw.azan);
         sendNotification(title, content, azanSound);
         return Result.success();
     }

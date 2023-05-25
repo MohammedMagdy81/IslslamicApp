@@ -6,8 +6,8 @@ public class Constant {
     public static final String ABDEL_WADOOD="عبدالودود حنيف";
     public static final String ABDEL_RASHEED="عبد الرشيد صوفي- رواية شعبة";
 
-    public static final String AZAN_TITLE_KEY ="azanTitle";
-    public static final String AZAN_CONTENT_KEY ="azanContent";
+    public static final String AZAN_TITLE_KEY ="الأذان";
+    public static final String AZAN_CONTENT_KEY ="وقت الصلاة";
     public static final String REGISTER_TAG ="registerPrayersTag";
 
 }
