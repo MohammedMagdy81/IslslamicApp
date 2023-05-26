@@ -69,7 +69,7 @@ public class TasbeehDetailFragment extends Fragment {
 
     private String getCurrentTime() {
         Date currentTime = new Date();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.ENGLISH);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd    HH:mm", Locale.ENGLISH);
         return dateFormat.format(currentTime);
     }
 }

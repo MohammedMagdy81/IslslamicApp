@@ -32,9 +32,9 @@ public class AzanNotificationWorker extends Worker {
         NotificationManager manager = (NotificationManager) getApplicationContext()
                 .getSystemService(Context.NOTIFICATION_SERVICE);
 
-        createNotificationBuilder(title, body, sound);
+        NotificationCompat.Builder notification = createNotificationBuilder(title, body, sound);
         createNotificationChannel(manager, sound);
-        manager.notify(2, createNotificationBuilder(title, body, sound).build());
+        manager.notify(2, notification.build());
     }
 
     private NotificationCompat.Builder createNotificationBuilder(String title, String body, Uri sound) {

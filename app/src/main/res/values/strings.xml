@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyIslamicApp</string>
+    <string name="app_name">IslamyApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="quran_offline_text">القران الكريم بدون إنترنت</string>
