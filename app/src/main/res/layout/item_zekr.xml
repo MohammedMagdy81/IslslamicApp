@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardBackgroundColor="@color/splash_color"
+
     app:cardCornerRadius="10dp"
     app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#A11391A2"
         android:paddingVertical="14dp">
 
         <TextView
@@ -21,7 +22,7 @@
             android:fontFamily="@font/cairo_bold"
             android:gravity="center"
             android:padding="6dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintWidth_percent=".7"
             app:layout_constraintEnd_toEndOf="parent"

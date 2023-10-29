@@ -13,8 +13,8 @@
         android:fontFamily="@font/cairo_bold"
         android:gravity="center"
         android:text="تفسير القرطبي"
-        android:textColor="@color/black"
-        android:textSize="22sp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,8 +27,8 @@
         android:fontFamily="@font/cairo_bold"
         android:gravity="center"
         android:text="الجامع لأحكام القرآن"
-        android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tafseerName" />
@@ -41,8 +41,8 @@
         android:gravity="center"
         android:padding="6dp"
         android:text="أبو عبد الله محمد بن أحمد الأنصاري القرطبي"
-        android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tafseerBookName" />

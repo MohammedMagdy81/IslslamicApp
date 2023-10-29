@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#D7E5F1"
+        android:background="#BA1391A2"
         android:paddingVertical="10dp"
         android:paddingHorizontal="4dp">
 
@@ -21,7 +21,7 @@
             android:layout_margin="8dp"
             android:fontFamily="@font/cairo_bold"
             android:text="Fajr"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -35,7 +35,7 @@
             android:layout_margin="8dp"
             android:fontFamily="@font/cairo_bold"
             android:text="صلاة الفجر"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -50,7 +50,7 @@
             android:text="6:45"
             app:layout_constraintStart_toEndOf="@id/prayerEnglishName"
             app:layout_constraintEnd_toStartOf="@id/prayerArabicName"
-            android:textColor="#CC1818"
+            android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintTop_toTopOf="parent"
 

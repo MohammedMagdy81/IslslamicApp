@@ -62,7 +62,7 @@
             android:text="سبحان الله"
             android:textSize="26sp"
             android:fontFamily="@font/cairo_bold"
-            android:textColor="#2DB1A5"
+            android:textColor="@color/splash_color"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iconTasbeeh2" />
 
