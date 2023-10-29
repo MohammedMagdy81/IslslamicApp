@@ -4,6 +4,7 @@ import static com.example.myislamicapp.data.utils.Constant.AZAN_CONTENT_KEY;
 import static com.example.myislamicapp.data.utils.Constant.AZAN_TITLE_KEY;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.work.Data;
@@ -28,6 +29,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import retrofit2.Response;
@@ -41,63 +43,91 @@ public class RegisterPrayerTimeWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-
         try {
             Calendar calendar = Calendar.getInstance();
             int year = calendar.get(Calendar.YEAR);
-            int month = calendar.get(Calendar.MONTH)+1;
+            int month = calendar.get(Calendar.MONTH) + 1;
 
-
-            Response<PrayerApiResponse> response = ApiClient.getApi()
-                    .getPrayerTime("Cairo", "Egypt", 3, month, year).execute();
-            if (response.isSuccessful()) {
-                List<DataItem> data = response.body().getData();
+            // call this api again to register data of prayer time . . .
+            Response<PrayerApiResponse> timesResponse = ApiClient.getApi().getPrayerTime
+                    ("Cairo", "Egypt", 3, month, year).execute();
+            if (timesResponse.isSuccessful()) {
+                List<DataItem> data = timesResponse.body().getData();// prayers of all month
                 for (int i = 0; i < data.size(); i++) {
                     DataItem dataItem = data.get(i);
                     Timings timings = dataItem.getTimings();
-                    ArrayList<PrayerTiming> prayerTimings = convertFromTimings(timings);
+                    ArrayList<PrayerTiming> myTimings = convertFromTimings(timings);
                     int day = i + 1;
-                    prayerTimings.forEach(prayerTiming -> {
-                        String prayerTag = "" + year + "/" + month + "/" + day + " " + prayerTiming.getPrayerArabicName();
-                        Data input = new Data.Builder()
-                                .putString(AZAN_TITLE_KEY, prayerTiming.getPrayerArabicName())
-                                .putString(AZAN_CONTENT_KEY, "حان الان موعد الصلاة")
-                                .build();
 
-                        OneTimeWorkRequest request = new
-                                OneTimeWorkRequest.Builder(AzanNotificationWorker.class)
-                                .setInputData(input)
-                                .setInitialDelay(calculatePrayerDelay(prayerTiming
-                                        , year, month, (day)), TimeUnit.MILLISECONDS)
-                                .addTag(prayerTag)
-                                .build();
-                        WorkManager.getInstance(getApplicationContext())
-                                .enqueueUniqueWork(prayerTag, ExistingWorkPolicy.REPLACE, request);
+                    myTimings.forEach(prayers -> {
+
+                        String prayerTag = "" + year + "/" + month + "/" + day + " " + prayers.getPrayerArabicName();
+                        long delay = calculatePrayerDelay(year, month, day, prayers);
+                        if (delay > 0) {
+                            // put data that sended to Azan Work
+                            Data input = new Data.Builder()
+                                    .putString(AZAN_TITLE_KEY, prayers.getPrayerArabicName())
+                                    .putString(AZAN_CONTENT_KEY, "حان الان موعد الصلاة ")
+                                    .build();
+
+
+                            OneTimeWorkRequest mRequest = new OneTimeWorkRequest
+                                    .Builder(AzanNotificationWorker.class)
+                                    .addTag(prayerTag)
+                                    .setInitialDelay(delay, TimeUnit.MILLISECONDS)
+                                    .setInputData(input)
+                                    .build();
+
+                            // tell work manger to do this request
+                            WorkManager.getInstance(getApplicationContext())
+                                    .enqueueUniqueWork(prayerTag,
+                                            ExistingWorkPolicy.REPLACE, mRequest);
+
+                        }
                     });
+
                 }
-
-
                 return Result.success();
             } else {
                 return Result.failure();
             }
+
         } catch (IOException e) {
             e.printStackTrace();
             return Result.retry();
         }
-
     }
 
-    private long calculatePrayerDelay(PrayerTiming prayerTiming, int year, int month, int day) {
+//    private long calculatePrayerDelay(int year, int month, int day, PrayerTiming prayerTiming) {
+//        String pattern = "yyyy/MM/dd HH:mm";
+//        DecimalFormat format = new DecimalFormat("00");
+//        String time = prayerTiming.getPrayerTime().split(" ")[0];
+//        String prayerDate = "" + year + "/" + format.format(month) + "/" + format.format(day) + " " + time;
+//        SimpleDateFormat dateFormat = new SimpleDateFormat(pattern, Locale.ENGLISH);
+//        try {
+//            Date date = dateFormat.parse(prayerDate);
+//            long currentTime = System.currentTimeMillis();
+//            return Objects.requireNonNull(date).getTime() - currentTime;
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//            return -1;
+//        }
+//
+//    }
+
+    private long calculatePrayerDelay(int year, int month, int day, PrayerTiming prayerTiming) {
         String pattern = "yyyy/MM/dd HH:mm";
-        DecimalFormat format = new DecimalFormat("00");
+        DecimalFormat decimalFormat = new DecimalFormat("00");
         String time = prayerTiming.getPrayerTime().split(" ")[0];
-        String prayerDate = "" + year + "/" + format.format(month) + "/" + format.format(day) + " " + time;
-        SimpleDateFormat dateFormat = new SimpleDateFormat(pattern, Locale.ENGLISH);
+        String prayerDate = "" + year + "/" + decimalFormat.format(month) + "/" + decimalFormat.format(day) + " " + time;
+        SimpleDateFormat format = new SimpleDateFormat(pattern, Locale.getDefault());
+
         try {
-            Date date = dateFormat.parse(prayerDate);
+            Date date = format.parse(prayerDate);
             long currentTime = System.currentTimeMillis();
-            return Math.abs(date.getTime() - currentTime);
+            Log.d("TAG", "calculatePrayerDelay: " + date.toString());
+            Log.d("TAG", "calculatePrayerDelay: diff = " + (date.getTime() - currentTime) + " " + date.getTime());
+            return (date.getTime() - currentTime);
         } catch (ParseException e) {
             e.printStackTrace();
             return -1;

@@ -9,4 +9,5 @@
     <string name="tasbeeh">التسبيح</string>
     <string name="search_text">بحث بالاية</string>
     <string name="tafseer_text">تفسير القران الكريم</string>
+    <string name="prayer_timing_txt">مواقيت الصلاة حسب الهيئة المصرية العامة للمساحة </string>
 </resources>

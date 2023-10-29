@@ -38,10 +38,10 @@ public class SearchFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentSearchBinding.inflate(getLayoutInflater());
+        binding = FragmentSearchBinding.inflate(inflater);
         return binding.getRoot();
     }
 

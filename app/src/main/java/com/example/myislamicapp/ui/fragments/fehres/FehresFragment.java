@@ -28,10 +28,10 @@ public class FehresFragment extends Fragment {
     QuranFehresViewModel viewModel;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentFehresBinding.inflate(getLayoutInflater());
+        binding = FragmentFehresBinding.inflate(inflater);
         return binding.getRoot();
     }
 

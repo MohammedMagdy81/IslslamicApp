@@ -1,6 +1,7 @@
 package com.example.myislamicapp.ui.fragments.quranOnline;
 
 import static com.example.myislamicapp.data.utils.Constant.ABDEL_BASET;
+import static com.example.myislamicapp.data.utils.Constant.ABDEL_BASET_MUGAWAD;
 import static com.example.myislamicapp.data.utils.Constant.ABDEL_RASHEED;
 import static com.example.myislamicapp.data.utils.Constant.ABDEL_WADOOD;
 
@@ -49,6 +50,8 @@ public class SurahDetailsFragment extends Fragment {
     private String qariAB = "abdul_basit_murattal";
     private String qariAw = "abdul_wadood_haneef_rare";
     private String qariAR = "abdurrashid_sufi_shu3ba";
+    private String abdulbaset_mujawwad = "abdulbaset_mujawwad";
+
     private String qari;
     private String str;
     int soraNo = 0;
@@ -70,7 +73,7 @@ public class SurahDetailsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentSurahDetailsBinding.inflate(inflater);
@@ -193,7 +196,6 @@ public class SurahDetailsFragment extends Fragment {
     }
 
 
-
     private void setUpQari() {
         binding.icSelectQari.setOnClickListener(v -> {
             BottomSheetDialog sheet = new BottomSheetDialog(requireContext(), R.style.BottomSheetDialogTheme);
@@ -210,8 +212,10 @@ public class SurahDetailsFragment extends Fragment {
                     qari = qariAB;
                 } else if (qariSelected.getText().toString().equals(ABDEL_WADOOD)) {
                     qari = qariAw;
-                }else if (qariSelected.getText().toString().equals(ABDEL_RASHEED)) {
+                } else if (qariSelected.getText().toString().equals(ABDEL_RASHEED)) {
                     qari = qariAR;
+                } else if (qariSelected.getText().toString().equals(ABDEL_BASET_MUGAWAD)) {
+                    qari = abdulbaset_mujawwad;
                 }
 
                 mediaPlayer.reset();

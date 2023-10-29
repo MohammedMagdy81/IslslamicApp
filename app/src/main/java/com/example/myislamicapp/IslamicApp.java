@@ -1,5 +1,8 @@
 package com.example.myislamicapp;
 
+import static com.example.myislamicapp.data.prayersNotifications.AzanUtils.AZAN_CHANNEL_ID;
+import static com.example.myislamicapp.data.prayersNotifications.AzanUtils.AZAN_CHANNEL_NAME;
+
 import android.app.Application;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -11,6 +14,7 @@ import com.example.myislamicapp.data.prayersNotifications.AzanUtils;
 import com.example.myislamicapp.data.utils.Constant;
 
 public class IslamicApp extends Application {
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -28,8 +32,8 @@ public class IslamicApp extends Application {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
 
             NotificationChannel notificationChannel = new NotificationChannel(
-                    AzanUtils.AZAN_CHANNEL_ID,
-                    AzanUtils.AZAN_CHANNEL_NAME,
+                    AZAN_CHANNEL_ID,
+                    AZAN_CHANNEL_NAME,
                     NotificationManager.IMPORTANCE_HIGH);
             notificationChannel.setSound(sound, Notification.AUDIO_ATTRIBUTES_DEFAULT);
             manager.createNotificationChannel(notificationChannel);

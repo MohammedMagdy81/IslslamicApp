@@ -42,10 +42,10 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentHomeBinding.inflate(getLayoutInflater());
+        binding = FragmentHomeBinding.inflate(inflater);
         binding.homeCardQuranOffline.setOnClickListener(view -> {
             NavHostFragment.findNavController(this).navigate(R.id.action_homeFragment_to_fehresFragment);
         });

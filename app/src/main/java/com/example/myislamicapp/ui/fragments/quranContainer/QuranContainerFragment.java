@@ -27,10 +27,10 @@ public class QuranContainerFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentQuranContainerBinding.inflate(getLayoutInflater(), container, false);
+        binding = FragmentQuranContainerBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 

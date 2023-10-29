@@ -12,6 +12,7 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.media.AudioAttributes;
 import android.net.Uri;
+import android.os.Build;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
@@ -29,49 +30,58 @@ public class AzanNotificationWorker extends Worker {
     }
 
     public void sendNotification(String title, String body, Uri sound) {
-        NotificationManager manager = (NotificationManager) getApplicationContext()
-                .getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager notificationManager =
+                (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
 
-        NotificationCompat.Builder notification = createNotificationBuilder(title, body, sound);
-        createNotificationChannel(manager, sound);
-        manager.notify(2, notification.build());
+        NotificationCompat.Builder notification = creteNotification(title, body, sound);
+        createNotificationChannel(notificationManager, sound);
+
+        notificationManager.notify(0, notification.build());
     }
 
-    private NotificationCompat.Builder createNotificationBuilder(String title, String body, Uri sound) {
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), AZAN_CHANNEL_ID);
-        builder
+    private NotificationCompat.Builder creteNotification(String title, String body, Uri sound) {
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), AZAN_CHANNEL_ID)
                 .setContentTitle(title)
                 .setContentText(body)
+                .setSmallIcon(R.drawable.azan)
                 .setDefaults(NotificationCompat.DEFAULT_SOUND)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setSmallIcon(R.drawable.azan)
                 .setSound(sound);
-        return builder;
+        return notification;
     }
 
-    private void createNotificationChannel(NotificationManager manager, Uri sound) {
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(AZAN_CHANNEL_ID, AZAN_CHANNEL_NAME,
+    private void createNotificationChannel(NotificationManager notificationManager, Uri sound) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            NotificationChannel notificationChannel = new NotificationChannel(
+                    AZAN_CHANNEL_ID,
+                    AZAN_CHANNEL_NAME,
                     NotificationManager.IMPORTANCE_HIGH);
-            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+
+            AudioAttributes attributes = new AudioAttributes.Builder()
                     .setUsage(AudioAttributes.USAGE_NOTIFICATION)
-                    .setContentType(CONTENT_TYPE_SONIFICATION)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                     .build();
-            channel.setSound(sound, audioAttributes);
-            manager.createNotificationChannel(channel);
+            notificationChannel.setSound(sound, attributes);
+            notificationManager.createNotificationChannel(notificationChannel);
         }
+
+
     }
 
     @NonNull
     @Override
     public Result doWork() {
-        Data data = getInputData();
-        String title = data.getString(AZAN_TITLE_KEY);
-        String content = data.getString(AZAN_CONTENT_KEY);
-        Uri azanSound = Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.raw.azan);
-        sendNotification(title, content, azanSound);
+        Data input = getInputData();
+
+        String title = input.getString(AZAN_TITLE_KEY);
+        String body = input.getString(AZAN_CONTENT_KEY);
+        Uri sound = Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.raw.azan);
+
+        sendNotification(title, body, sound);
         return Result.success();
     }
+
 }
 
 

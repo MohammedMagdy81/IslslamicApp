@@ -30,11 +30,13 @@
 
     <TextView
         android:id="@+id/textPrayerTimes"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-
+        android:lines="2"
+        android:padding="6dp"
+        android:layout_marginTop="6dp"
         android:fontFamily="@font/cairo_bold"
-        android:text="مواقيت الصلاة"
+        android:text="@string/prayer_timing_txt"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:gravity="center"

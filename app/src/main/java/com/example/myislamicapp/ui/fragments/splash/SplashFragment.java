@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.myislamicapp.R;
+import com.example.myislamicapp.data.prayersNotifications.AzanUtils;
 import com.example.myislamicapp.databinding.FragmentSplashBinding;
 
 public class SplashFragment extends Fragment {
@@ -23,10 +24,10 @@ public class SplashFragment extends Fragment {
     private FragmentSplashBinding binding;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentSplashBinding.inflate(getLayoutInflater());
+        binding = FragmentSplashBinding.inflate(inflater);
         return binding.getRoot();
     }
 
@@ -37,8 +38,13 @@ public class SplashFragment extends Fragment {
 
             NavHostFragment navHostFragment =
                     (NavHostFragment) requireActivity().getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
-            NavController navController = navHostFragment.getNavController();
-            navController.navigate(R.id.action_splashFragment_to_homeFragment);
+            NavController navController = null;
+            if (navHostFragment != null) {
+                navController = navHostFragment.getNavController();
+            }
+            if (navController != null) {
+                navController.navigate(R.id.action_splashFragment_to_homeFragment);
+            }
 
         }, 2500);
     }

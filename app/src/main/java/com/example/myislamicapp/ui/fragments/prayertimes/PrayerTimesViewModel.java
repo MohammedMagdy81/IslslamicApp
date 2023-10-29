@@ -1,6 +1,7 @@
 package com.example.myislamicapp.ui.fragments.prayertimes;
 
 import android.app.Application;
+import android.content.Context;
 import android.util.Log;
 
 import androidx.lifecycle.AndroidViewModel;
@@ -10,6 +11,7 @@ import com.example.myislamicapp.data.network.ApiClient;
 import com.example.myislamicapp.data.pojo.prayer.PrayerApiResponse;
 import com.example.myislamicapp.data.pojo.prayer.PrayerTiming;
 import com.example.myislamicapp.data.pojo.prayer.Timings;
+import com.example.myislamicapp.data.prayersNotifications.AzanUtils;
 
 import java.util.ArrayList;
 
@@ -54,7 +56,7 @@ public class PrayerTimesViewModel extends AndroidViewModel {
     }
 
     public void getCurrentPrayerTiming(int month, int year) {
-        getPrayers("Cairo", "Egypt", 3, month + 1, year)
+        getPrayers("Cairo", "Eg", 3, month + 1, year)
                 .enqueue(new Callback<PrayerApiResponse>() {
                     @Override
                     public void onResponse(Call<PrayerApiResponse> call, Response<PrayerApiResponse> response) {
@@ -70,8 +72,8 @@ public class PrayerTimesViewModel extends AndroidViewModel {
                 });
     }
 
-    public void setPrayerTimings(int day, int month, int year) {
-        getPrayers("Cairo", "Egypt", 3, month + 1, year)
+    public void setPrayerTimings( int day, int month, int year) {
+        getPrayers("Giza", "Eg", 3, month + 1, year)
                 .enqueue(new Callback<PrayerApiResponse>() {
                     @Override
                     public void onResponse(Call<PrayerApiResponse> call, Response<PrayerApiResponse> response) {
@@ -80,6 +82,7 @@ public class PrayerTimesViewModel extends AndroidViewModel {
                             ArrayList<PrayerTiming> prayerTimings = convertFromTimings(timings);
                             prayerTiming.setValue(prayerTimings);
                             dataResponse.setValue(response.body());
+                            AzanUtils.registerPrayerTimes(getApplication());
                             Log.d("response", "onResponse: " + response.body());
                         }
                     }

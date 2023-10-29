@@ -60,6 +60,15 @@
             android:gravity="center"
             android:paddingStart="32dp"
             android:buttonTint="#168BA6"/>
+        <RadioButton
+            android:id="@+id/radioBtn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="عبد الباسط عبد الصمد - مجود"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:paddingStart="32dp"
+            android:buttonTint="#168BA6"/>
 
     </RadioGroup>
 
