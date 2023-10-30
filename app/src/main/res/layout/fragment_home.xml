@@ -11,7 +11,7 @@
         android:id="@+id/headerHome"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#88009688"
+       android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent=".30"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,6 +22,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:src="@drawable/mosque"
+            android:alpha=".5"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent=".5" />
@@ -70,6 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
+        android:layout_marginTop="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,13 +92,15 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/homeCardQuranOffline"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
                 android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/splash_color"
+                app:cardBackgroundColor="@color/purple_200"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/homeCardQuranOnline"
                 app:layout_constraintEnd_toStartOf="@id/homeCardAhadeeth"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintWidth_percent=".4">
@@ -135,13 +140,15 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/homeCardAhadeeth"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
                 android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/splash_color"
+                app:cardBackgroundColor="@color/purple_200"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/homeCardAzkar"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@id/homeCardQuranOffline"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintWidth_percent=".4">
@@ -181,18 +188,19 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/homeCardQuranOnline"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
                 android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/splash_color"
+                app:cardBackgroundColor="@color/purple_200"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/homeCardPrayerTimes"
                 app:layout_constraintEnd_toEndOf="@id/homeCardQuranOffline"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/homeCardQuranOffline"
-                app:layout_constraintTop_toBottomOf="@id/homeCardQuranOffline"
-                app:layout_constraintWidth_percent=".4"
 
-                >
+                app:layout_constraintTop_toBottomOf="@+id/homeCardQuranOffline"
+                app:layout_constraintWidth_percent=".4">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -229,18 +237,19 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/homeCardAzkar"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
                 android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/splash_color"
+                app:cardBackgroundColor="@color/purple_200"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/homeCardRadio"
                 app:layout_constraintEnd_toEndOf="@id/homeCardAhadeeth"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/homeCardAhadeeth"
-                app:layout_constraintTop_toBottomOf="@id/homeCardAhadeeth"
-                app:layout_constraintWidth_percent=".4"
 
-                >
+                app:layout_constraintTop_toBottomOf="@+id/homeCardAhadeeth"
+                app:layout_constraintWidth_percent=".4">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -266,11 +275,11 @@
                         android:layout_height="48dp"
                         android:layout_marginBottom="4dp"
                         android:src="@drawable/azkar"
-                        app:tint="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@id/azkarText"
                         app:layout_constraintStart_toStartOf="@id/azkarText"
-                        app:layout_constraintTop_toBottomOf="@id/azkarText" />
+                        app:layout_constraintTop_toBottomOf="@id/azkarText"
+                        app:tint="@color/white" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -278,23 +287,24 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/homeCardPrayerTimes"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="32dp"
-                app:cardBackgroundColor="@color/splash_color"
+                app:cardBackgroundColor="@color/purple_200"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/homeCardTasbeeh"
                 app:layout_constraintEnd_toEndOf="@id/homeCardQuranOnline"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/homeCardQuranOnline"
-                app:layout_constraintTop_toBottomOf="@id/homeCardQuranOnline"
-                app:layout_constraintWidth_percent=".4"
 
-                >
+                app:layout_constraintTop_toBottomOf="@+id/homeCardQuranOnline"
+                app:layout_constraintWidth_percent=".4">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:paddingVertical="12dp">
 
                     <TextView
                         android:id="@+id/prayersTimeText"
@@ -327,19 +337,19 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/homeCardRadio"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="32dp"
-                app:cardBackgroundColor="@color/splash_color"
+                app:cardBackgroundColor="@color/purple_200"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/homeCardTafseer"
                 app:layout_constraintEnd_toEndOf="@id/homeCardAzkar"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/homeCardAzkar"
-                app:layout_constraintTop_toBottomOf="@id/homeCardAzkar"
-                app:layout_constraintWidth_percent=".4"
 
-                >
+                app:layout_constraintTop_toBottomOf="@+id/homeCardAzkar"
+                app:layout_constraintWidth_percent=".4">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -376,20 +386,23 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/homeCardTasbeeh"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
                 android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/splash_color"
+                app:cardBackgroundColor="@color/purple_200"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/homeCardAhadeeth"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/homeCardPrayerTimes"
+                app:layout_constraintTop_toBottomOf="@+id/homeCardPrayerTimes"
                 app:layout_constraintWidth_percent=".4">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:paddingVertical="12dp">
 
                     <TextView
                         android:id="@+id/tasbeeh_text"
@@ -422,14 +435,15 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/homeCardTafseer"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
                 android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/splash_color"
+                app:cardBackgroundColor="@color/purple_200"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp"
-               app:layout_constraintStart_toStartOf="@id/homeCardRadio"
-                app:layout_constraintTop_toBottomOf="@id/homeCardRadio"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/homeCardRadio"
+                app:layout_constraintTop_toBottomOf="@+id/homeCardRadio"
                 app:layout_constraintWidth_percent=".4">
 
                 <androidx.constraintlayout.widget.ConstraintLayout

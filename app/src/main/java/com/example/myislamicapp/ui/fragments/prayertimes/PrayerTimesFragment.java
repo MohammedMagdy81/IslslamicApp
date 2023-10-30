@@ -1,6 +1,11 @@
 package com.example.myislamicapp.ui.fragments.prayertimes;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.CalendarView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,25 +13,20 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.DatePicker;
-
 import com.example.myislamicapp.data.prayersNotifications.AzanUtils;
 import com.example.myislamicapp.databinding.FragmentPrayerTimesBinding;
 import com.example.myislamicapp.ui.adapters.PrayerTimeListAdapter;
+import com.google.android.material.datepicker.MaterialDatePicker;
 
 import java.util.Calendar;
-import java.util.Objects;
 
 public class PrayerTimesFragment extends Fragment {
     private FragmentPrayerTimesBinding binding;
     private PrayerTimeListAdapter adapter;
     private PrayerTimesViewModel viewModel;
     Calendar calendar;
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class PrayerTimesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentPrayerTimesBinding.inflate(inflater, container, false);
+
         return binding.getRoot();
     }
 
@@ -60,7 +61,10 @@ public class PrayerTimesFragment extends Fragment {
 
 
     private void initDatePicker() {
-        binding.datePicker.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+
+
+        binding.datePicker
+                .init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH), (datePicker, year, month, day) -> {
                     viewModel.setPrayerTimings( day, month, year);
                     Log.d("current Day :", day + " - " + month + " - " + year);

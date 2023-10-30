@@ -9,22 +9,34 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1978eb33-c001-419b-935d-5d9c47f093b9" name="Changes" comment="add new qare">
+    <list default="true" id="1978eb33-c001-419b-935d-5d9c47f093b9" name="Changes" comment="change some colors">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_check_outline.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_time.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/quran_splash.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myislamicapp/data/utils/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myislamicapp/data/utils/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myislamicapp/ui/fragments/prayertimes/PrayerTimesFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myislamicapp/ui/fragments/prayertimes/PrayerTimesFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/btn_save_bg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_save_bg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/edit_text_search_bg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/edit_text_search_bg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_bg_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_bg_row.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/item_hadeeth_bg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/item_hadeeth_bg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/item_tafseer_bg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/item_tafseer_bg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_prayer_times.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_prayer_times.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_splash.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_hadeeth_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_hadeeth_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_surah_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_surah_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_tasbeeh_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_tasbeeh_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_all_tasabeeh.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_all_tasabeeh.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_prayer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_prayer.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_radio.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_radio.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_tafseer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_tafseer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_sora_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_sora_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_sora_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_sora_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_surah.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_surah.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_tasbeeh_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_tasbeeh_list.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_zekr.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_zekr.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +44,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[90159a64]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -41,11 +53,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="navigationResourceFile" />
         <option value="Interface" />
-        <option value="resourceFile" />
         <option value="layoutResourceFile" />
+        <option value="resourceFile" />
+        <option value="Kotlin Class" />
         <option value="Class" />
       </list>
     </option>
@@ -72,40 +84,40 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;AnalyzeApkAction.lastApkPath&quot;: &quot;C:/Users/you/AndroidStudioProjects/MyIslamicApp/app/build/outputs/apk/debug/app-debug.apk&quot;,
-    &quot;ApkExportedModule&quot;: &quot;MyIslamicApp.app&quot;,
-    &quot;DEBUGGABLE_DEVICE&quot;: &quot;xiaomi-21061119ag-156681370508&quot;,
-    &quot;DEBUGGABLE_PROCESS&quot;: &quot;com.example.myislamicapp&quot;,
-    &quot;DEBUGGER_ID&quot;: &quot;Auto&quot;,
-    &quot;ExportApk.ApkPathForMyIslamicApp.app&quot;: &quot;C:\\Users\\you\\AndroidStudioProjects\\MyIslamicApp\\app&quot;,
-    &quot;PROJECT_TRUSTED_KEY&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHOW_ALL_PROCESSES&quot;: &quot;false&quot;,
-    &quot;WORKMANAGER_INSPECTOR_NOTIFICATION_DISMISSED&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/you/AndroidStudioProjects/MyIslamicApp/app/src/main/res/drawable&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/you/AndroidStudioProjects/MyIslamicApp/app/build/outputs/apk/debug/app-debug.apk&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "AnalyzeApkAction.lastApkPath": "C:/Users/you/AndroidStudioProjects/MyIslamicApp/app/build/outputs/apk/debug/app-debug.apk",
+    "ApkExportedModule": "MyIslamicApp.app",
+    "DEBUGGABLE_DEVICE": "xiaomi-21061119ag-156681370508",
+    "DEBUGGABLE_PROCESS": "com.example.myislamicapp",
+    "DEBUGGER_ID": "Auto",
+    "ExportApk.ApkPathForMyIslamicApp.app": "C:\\Users\\you\\AndroidStudioProjects\\MyIslamicApp\\app",
+    "PROJECT_TRUSTED_KEY": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHOW_ALL_PROCESSES": "false",
+    "WORKMANAGER_INSPECTOR_NOTIFICATION_DISMISSED": "true",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "last_directory_selection": "C:/Users/you/AndroidStudioProjects/MyIslamicApp/app/src/main/res/drawable",
+    "last_opened_file_path": "C:/Users/you/AndroidStudioProjects/MyIslamicApp/app/src/main/res/drawable",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "vcs.Git"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ExportApk.BuildVariants&quot;: [
-      &quot;release&quot;
+  "keyToStringList": {
+    "ExportApk.BuildVariants": [
+      "release"
     ],
-    &quot;com.android.tools.idea.sqlite.queryhistory&quot;: [
-      &quot;SELECT*FROM Tasbeeh&quot;,
-      &quot;SELECT sora as soraNumber ,MIN(page) as startPage,MAX(page) as endPage,sora_name_ar as arabicName,sora_name_en as englishName FROM quran WHERE sora = '6'&quot;
+    "com.android.tools.idea.sqlite.queryhistory": [
+      "SELECT*FROM Tasbeeh",
+      "SELECT sora as soraNumber ,MIN(page) as startPage,MAX(page) as endPage,sora_name_ar as arabicName,sora_name_en as englishName FROM quran WHERE sora = '6'"
     ]
   }
-}</component>
+}]]></component>
   <component name="PsdUISettings">
     <option name="MODULES_LIST_MINIMIZE" value="true" />
     <option name="MODULE_TAB" value="Signing Configs" />
@@ -116,8 +128,8 @@
       <recent name="com.example.myislamicapp.data.translate" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\you\AndroidStudioProjects\MyIslamicApp\app\src\main\res\raw" />
       <recent name="C:\Users\you\AndroidStudioProjects\MyIslamicApp\app\src\main\res\drawable" />
+      <recent name="C:\Users\you\AndroidStudioProjects\MyIslamicApp\app\src\main\res\raw" />
       <recent name="C:\Users\you\AndroidStudioProjects\MyIslamicApp\app\src\main\res\font" />
       <recent name="C:\Users\you\AndroidStudioProjects\MyIslamicApp\app\src\main\assets\azkar" />
       <recent name="C:\Users\you\AndroidStudioProjects\MyIslamicApp\app\src\main\assets" />
@@ -342,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698579832137</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="change some colors">
+      <created>1698586489046</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1698586489046</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -366,7 +385,8 @@
     <MESSAGE value="enqueue prayer times using work manager" />
     <MESSAGE value="change font" />
     <MESSAGE value="add new qare" />
-    <option name="LAST_COMMIT_MESSAGE" value="add new qare" />
+    <MESSAGE value="change some colors" />
+    <option name="LAST_COMMIT_MESSAGE" value="change some colors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -390,6 +410,11 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/myislamicapp/ui/fragments/tafseer/TafseerFragment.java</url>
           <line>42</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/myislamicapp/ui/fragments/prayertimes/PrayerTimesFragment.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

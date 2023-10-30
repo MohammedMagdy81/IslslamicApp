@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#6D1391A2"
+        android:background="@color/purple_200"
         android:paddingHorizontal="16dp"
         android:paddingVertical="32dp">
 
@@ -22,7 +22,7 @@
             android:layout_marginTop="8dp"
             android:fontFamily="@font/cairo_bold"
             android:gravity="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

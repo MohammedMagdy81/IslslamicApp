@@ -4,19 +4,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/splash_color_light"
+    android:background="@color/white"
     tools:context=".ui.fragments.splash.SplashFragment">
 
-    <ImageView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent=".06"
+        android:orientation="horizontal"
+        android:id="@+id/guideline"
+        />
+
+    <TextView
+        android:id="@+id/tvMuslimapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:src="@drawable/splash_bg"
-        app:layout_constraintHeight_percent=".6"
-        app:layout_constraintWidth_percent=".8"
+        app:layout_constraintTop_toBottomOf="@id/guideline"
+        android:textColor="#672CBC"
+        android:textSize="28sp"
+        android:fontFamily="@font/cairo_bold"
+        android:text="@string/muslim_app"
         />
+    <TextView
+        android:id="@+id/tvSplashDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvMuslimapp"
+        app:layout_constraintStart_toStartOf="@id/tvMuslimapp"
+        app:layout_constraintEnd_toEndOf="@id/tvMuslimapp"
+        android:textColor="#8789A3"
+        android:textSize="22sp"
+        android:padding="10dp"
+        android:lineSpacingExtra="10dp"
+        android:gravity="center"
+        android:text="Learn Quran and \nRecite once everyday"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/quran_splash"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:alpha=".76"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSplashDesc" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

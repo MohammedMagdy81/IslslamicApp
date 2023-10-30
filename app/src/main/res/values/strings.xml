@@ -10,4 +10,6 @@
     <string name="search_text">بحث بالاية</string>
     <string name="tafseer_text">تفسير القران الكريم</string>
     <string name="prayer_timing_txt">مواقيت الصلاة حسب الهيئة المصرية العامة للمساحة </string>
+    <string name="add_activity">Add Activity</string>
+    <string name="muslim_app">Muslim App</string>
 </resources>
